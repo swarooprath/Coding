@@ -72,4 +72,60 @@ Here's a comprehensive list of classic dynamic programming problems along with a
 - **Base Cases**: \( dp[0] = true \) (empty string is a word)
 - **Approach**: Tabulation.
 
-Each of these problems illustrates how dynamic programming partitions the problem into discrete, manageable subproblems, solving each in turn to build up to a solution for the entire problem.
+
+### 13. Longest Increasing Subsequence (LIS)
+- **States**: \( dp[i] \) as the length of the longest increasing subsequence ending at index \( i \).
+- **State Transition**: 
+  \[
+  dp[i] = \max(dp[j] + 1 \text{ for all } j < i \text{ if } A[j] < A[i])
+  \]
+- **Base Cases**: \( dp[i] = 1 \) for all \( i \).
+- **Approach**: Use tabulation with a 1D array to build the solution. 
+
+
+### 8. Subset Sum Problem
+- **States**: \( dp[i][j] \) as a boolean indicating whether a subset of the first \( i \) elements can sum up to \( j \).
+- **State Transition**: 
+  \[
+  dp[i][j] = dp[i-1][j] \text{ or } dp[i-1][j-arr[i-1]] \text{ if } j \geq arr[i-1]
+  \]
+- **Base Cases**: \( dp[i][0] = true \) for all \( i \), \( dp[0][j] = false \) for all \( j > 0 \).
+- **Approach**: Use tabulation with a 2D array to fill the table.
+
+### 9. Matrix Chain Multiplication
+- **States**: \( dp[i][j] \) as the minimum number of multiplications needed to multiply the matrices from index \( i \) to \( j \).
+- **State Transition**: 
+  \[
+  dp[i][j] = \min(dp[i][k] + dp[k+1][j] + dimensions[i-1]*dimensions[k]*dimensions[j] \text{ for all } i \leq k < j)
+  \]
+- **Base Cases**: \( dp[i][i] = 0 \) for all \( i \).
+- **Approach**: Use tabulation with a 2D array to fill the table.
+
+### 10. Unique Paths in a Grid
+- **States**: \( dp[i][j] \) as the number of unique paths to reach cell \( (i, j) \).
+- **State Transition**: 
+  \[
+  dp[i][j] = dp[i-1][j] + dp[i][j-1]
+  \]
+- **Base Cases**: \( dp[0][j] = 1 \) for all \( j \), \( dp[i][0] = 1 \) for all \( i \).
+- **Approach**: Use tabulation with a 2D array to fill the table.
+
+### 11. Maximum Subarray Sum (Kadane’s Algorithm)
+- **States**: \( dp[i] \) as the maximum subarray sum ending at index \( i \).
+- **State Transition**: 
+  \[
+  dp[i] = \max(arr[i], dp[i-1] + arr[i])
+  \]
+- **Base Cases**: \( dp[0] = arr[0] \).
+- **Approach**: Use tabulation with a 1D array to build the solution.
+
+### 12. Palindrome Partitioning
+- **States**: \( dp[i] \) as the minimum number of cuts needed to partition the substring \( s[0:i] \) into palindromes.
+- **State Transition**: 
+  \[
+  dp[i] = \min(dp[j-1] + 1 \text{ if } s[j:i] \text{ is a palindrome})
+  \]
+- **Base Cases**: \( dp[i] = 0 \) if \( s[0:i] \) is a palindrome.
+- **Approach**: Use tabulation with a 1D array to build the solution.
+
+These examples provide a diverse set of problems that illustrate the versatility and power of dynamic programming in solving optimization problems through systematic state definition, state transitions, and careful consideration of base cases.

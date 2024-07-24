@@ -80,28 +80,9 @@ Here's a comprehensive list of classic dynamic programming problems along with a
   dp[i] = \max(dp[j] + 1 \text{ for all } j < i \text{ if } A[j] < A[i])
   \]
 - **Base Cases**: \( dp[i] = 1 \) for all \( i \).
-- **Approach**: Use tabulation with a 1D array to build the solution. 
+- **Approach**: Use tabulation with a 1D array to build the solution.
 
-
-### 8. Subset Sum Problem
-- **States**: \( dp[i][j] \) as a boolean indicating whether a subset of the first \( i \) elements can sum up to \( j \).
-- **State Transition**: 
-  \[
-  dp[i][j] = dp[i-1][j] \text{ or } dp[i-1][j-arr[i-1]] \text{ if } j \geq arr[i-1]
-  \]
-- **Base Cases**: \( dp[i][0] = true \) for all \( i \), \( dp[0][j] = false \) for all \( j > 0 \).
-- **Approach**: Use tabulation with a 2D array to fill the table.
-
-### 9. Matrix Chain Multiplication
-- **States**: \( dp[i][j] \) as the minimum number of multiplications needed to multiply the matrices from index \( i \) to \( j \).
-- **State Transition**: 
-  \[
-  dp[i][j] = \min(dp[i][k] + dp[k+1][j] + dimensions[i-1]*dimensions[k]*dimensions[j] \text{ for all } i \leq k < j)
-  \]
-- **Base Cases**: \( dp[i][i] = 0 \) for all \( i \).
-- **Approach**: Use tabulation with a 2D array to fill the table.
-
-### 10. Unique Paths in a Grid
+### 14. Unique Paths in a Grid
 - **States**: \( dp[i][j] \) as the number of unique paths to reach cell \( (i, j) \).
 - **State Transition**: 
   \[
@@ -110,7 +91,7 @@ Here's a comprehensive list of classic dynamic programming problems along with a
 - **Base Cases**: \( dp[0][j] = 1 \) for all \( j \), \( dp[i][0] = 1 \) for all \( i \).
 - **Approach**: Use tabulation with a 2D array to fill the table.
 
-### 11. Maximum Subarray Sum (Kadane’s Algorithm)
+### 15. Maximum Subarray Sum (Kadane’s Algorithm)
 - **States**: \( dp[i] \) as the maximum subarray sum ending at index \( i \).
 - **State Transition**: 
   \[
@@ -119,7 +100,7 @@ Here's a comprehensive list of classic dynamic programming problems along with a
 - **Base Cases**: \( dp[0] = arr[0] \).
 - **Approach**: Use tabulation with a 1D array to build the solution.
 
-### 12. Palindrome Partitioning
+### 16. Palindrome Partitioning
 - **States**: \( dp[i] \) as the minimum number of cuts needed to partition the substring \( s[0:i] \) into palindromes.
 - **State Transition**: 
   \[
